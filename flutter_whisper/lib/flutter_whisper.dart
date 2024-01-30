@@ -8,3 +8,11 @@ Future<String> getPlatformName() async {
   if (platformName == null) throw Exception('Unable to get platform name.');
   return platformName;
 }
+
+/// init the whisper engine
+Future<void> initialize({
+  void Function(dynamic)? onResult,
+  void Function(dynamic)? onError,
+}) async {
+  await _platform.initialize(onResult: onResult, onError: onError);
+}
