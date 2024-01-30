@@ -1,0 +1,30 @@
+name: flutter_whisper
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+flutter:
+  plugin:
+    implements: flutter_whisper
+    platforms:
+      ios:
+        pluginClass: FlutterWhisperPlugin
+      android:
+        package: com.wamynobe.flutterwhisper
+        pluginClass: FlutterWhisperPlugin
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_whisper_platform_interface:
+    path: ../flutter_whisper_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.0
+  plugin_platform_interface: ^2.1.6
+  very_good_analysis: ^5.1.0

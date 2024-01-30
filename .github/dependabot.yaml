@@ -1,0 +1,27 @@
+version: 2
+enable-beta-ecosystems: true
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/flutter_whisper"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/flutter_whisper/example"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/flutter_whisper_platform_interface"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/flutter_whisper_android"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/flutter_whisper_ios"
+    schedule:
+      interval: "daily"
