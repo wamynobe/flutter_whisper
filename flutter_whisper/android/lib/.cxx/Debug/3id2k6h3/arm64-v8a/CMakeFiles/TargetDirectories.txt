@@ -1,0 +1,4 @@
+/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/.cxx/Debug/3id2k6h3/arm64-v8a/CMakeFiles/whisper.dir
+/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/.cxx/Debug/3id2k6h3/arm64-v8a/CMakeFiles/whisper_v8fp16_va.dir
+/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/.cxx/Debug/3id2k6h3/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/.cxx/Debug/3id2k6h3/arm64-v8a/CMakeFiles/rebuild_cache.dir

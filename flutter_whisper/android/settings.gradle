@@ -1,1 +1,2 @@
 rootProject.name = 'flutter_whisper_android'
+include ':lib'

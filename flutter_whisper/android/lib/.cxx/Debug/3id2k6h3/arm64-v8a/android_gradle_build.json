@@ -1,0 +1,47 @@
+{
+  "buildFiles": [
+    "/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/src/main/jni/whisper/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/mason/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/.cxx/Debug/3id2k6h3/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/mason/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/.cxx/Debug/3id2k6h3/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "whisper::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "whisper",
+      "output": "/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/build/intermediates/cxx/Debug/3id2k6h3/obj/arm64-v8a/libwhisper.so",
+      "runtimeFiles": []
+    },
+    "whisper_v8fp16_va::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "whisper_v8fp16_va",
+      "output": "/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/build/intermediates/cxx/Debug/3id2k6h3/obj/arm64-v8a/libwhisper_v8fp16_va.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/mason/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/mason/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

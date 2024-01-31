@@ -31,7 +31,7 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
     if (_isReady) {
       return;
     }
-    await _methodChannel.invokeMethod('init');
+    await _methodChannel.invokeMethod('initialize');
     _isReady = true;
   }
 

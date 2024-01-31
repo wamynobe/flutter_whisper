@@ -1,0 +1,15 @@
+# ninja log v5
+9	148	1706671254259393553	CMakeFiles/whisper_v8fp16_va.dir/jni.c.o	5bb9f04ae2c07f
+0	150	1706671254267391511	CMakeFiles/whisper.dir/jni.c.o	db99fd5d4ba6cdac
+1	242	1706671254355369052	CMakeFiles/whisper.dir/home/mason/project/whisper/whisper.cpp/ggml-alloc.c.o	2261c3e7c7084911
+1	244	1706671254359368030	CMakeFiles/whisper_v8fp16_va.dir/home/mason/project/whisper/whisper.cpp/ggml-alloc.c.o	cd347d45d1689a9
+2	306	1706671254419352717	CMakeFiles/whisper_v8fp16_va.dir/home/mason/project/whisper/whisper.cpp/ggml-backend.c.o	734e3228f1426b0b
+1	306	1706671254423351697	CMakeFiles/whisper.dir/home/mason/project/whisper/whisper.cpp/ggml-backend.c.o	b47c9a2a82d32297
+1	634	1706671254751267984	CMakeFiles/whisper.dir/home/mason/project/whisper/whisper.cpp/ggml-quants.c.o	9938abe1fbe569be
+5	696	1706671254811252671	CMakeFiles/whisper_v8fp16_va.dir/home/mason/project/whisper/whisper.cpp/ggml-quants.c.o	c9194477c1537ed3
+1	1289	1706671255395103622	CMakeFiles/whisper.dir/home/mason/project/whisper/whisper.cpp/ggml.c.o	2b7dbb3f73328bea
+2	1393	1706671255499077079	CMakeFiles/whisper_v8fp16_va.dir/home/mason/project/whisper/whisper.cpp/ggml.c.o	503736043654cc4c
+1	3736	1706671257826482924	CMakeFiles/whisper.dir/home/mason/project/whisper/whisper.cpp/whisper.cpp.o	d92d58ec41fa875f
+3736	3831	1706671257942453318	/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/build/intermediates/cxx/Debug/3id2k6h3/obj/arm64-v8a/libwhisper.so	c7ac2e97edeb8bb1
+9	3893	1706671257986442089	CMakeFiles/whisper_v8fp16_va.dir/home/mason/project/whisper/whisper.cpp/whisper.cpp.o	693fe64670fd1fce
+3893	3944	1706671258054424735	/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/build/intermediates/cxx/Debug/3id2k6h3/obj/arm64-v8a/libwhisper_v8fp16_va.so	42a2283f9263507b

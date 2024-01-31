@@ -1,0 +1,18 @@
+                        -H/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/src/main/jni/whisper
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=26
+-DANDROID_PLATFORM=android-26
+-DANDROID_ABI=x86
+-DCMAKE_ANDROID_ARCH_ABI=x86
+-DANDROID_NDK=/home/mason/Android/Sdk/ndk/25.2.9519653
+-DCMAKE_ANDROID_NDK=/home/mason/Android/Sdk/ndk/25.2.9519653
+-DCMAKE_TOOLCHAIN_FILE=/home/mason/Android/Sdk/ndk/25.2.9519653/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/home/mason/Android/Sdk/cmake/3.22.1/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/build/intermediates/cxx/Debug/3id2k6h3/obj/x86
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/build/intermediates/cxx/Debug/3id2k6h3/obj/x86
+-DCMAKE_BUILD_TYPE=Debug
+-B/home/mason/project/whisper/whisper.cpp/examples/whisper.android/lib/.cxx/Debug/3id2k6h3/x86
+-GNinja
+                        Build command args: []
+                        Version: 2
