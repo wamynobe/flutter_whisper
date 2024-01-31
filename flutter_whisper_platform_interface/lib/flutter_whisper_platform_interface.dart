@@ -25,7 +25,7 @@ abstract class FlutterWhisperPlatform extends PlatformInterface {
   /// {@template initialize}
   /// init the whisper engine
   /// {@endtemplate}
-  Future<void> initialize({
+  Future<bool> initialize({
     void Function(dynamic)? onResult,
     void Function(dynamic)? onError,
   });

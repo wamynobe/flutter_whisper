@@ -8,7 +8,7 @@ class FlutterWhisperMock extends FlutterWhisperPlatform {
   Future<String?> getPlatformName() async => mockPlatformName;
 
   @override
-  Future<void> initialize({
+  Future<bool> initialize({
     void Function(dynamic)? onResult,
     void Function(dynamic)? onError,
   }) {

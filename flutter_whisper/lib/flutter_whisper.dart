@@ -10,9 +10,9 @@ Future<String> getPlatformName() async {
 }
 
 /// init the whisper engine
-Future<void> initialize({
+Future<bool> initialize({
   void Function(dynamic)? onResult,
   void Function(dynamic)? onError,
 }) async {
-  await _platform.initialize(onResult: onResult, onError: onError);
+  return _platform.initialize(onResult: onResult, onError: onError);
 }

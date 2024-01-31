@@ -21,7 +21,7 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
 
   /// {@macro initialize}
   @override
-  Future<void> initialize({
+  Future<bool> initialize({
     void Function(dynamic)? onResult,
     void Function(dynamic)? onError,
   }) async {
@@ -29,10 +29,11 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
     this.onError = onError;
 
     if (_isReady) {
-      return;
+      return true;
     }
-    await _methodChannel.invokeMethod('initialize');
+    final isInitialized = await _methodChannel.invokeMethod('initialize');
     _isReady = true;
+    return isInitialized as bool;
   }
 
   /// {@macro startListening}
