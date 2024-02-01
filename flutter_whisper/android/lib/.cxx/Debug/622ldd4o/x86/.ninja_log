@@ -1,0 +1,8 @@
+# ninja log v5
+1	42	1706771941972090516	CMakeFiles/whisper.dir/jni.c.o	b2941631d7c49dcb
+0	180	1706771942112089508	CMakeFiles/whisper.dir/home/mason/project/flutter_whisper/whisper.cpp/ggml-alloc.c.o	6c371645a6d04187
+0	231	1706771942160089162	CMakeFiles/whisper.dir/home/mason/project/flutter_whisper/whisper.cpp/ggml-backend.c.o	942f9255eb9c4212
+0	318	1706771942248088528	CMakeFiles/whisper.dir/home/mason/project/flutter_whisper/whisper.cpp/ggml-quants.c.o	4ae92af345486942
+0	945	1706771942872084032	CMakeFiles/whisper.dir/home/mason/project/flutter_whisper/whisper.cpp/ggml.c.o	438a1cbefd7006
+0	2914	1706771944820069997	CMakeFiles/whisper.dir/home/mason/project/flutter_whisper/whisper.cpp/whisper.cpp.o	ce13e836a1383f7e
+2914	2985	1706771944912069333	/home/mason/project/flutter_whisper/flutter_whisper/android/lib/build/intermediates/cxx/Debug/622ldd4o/obj/x86/libwhisper.so	320dcbaa943ac132

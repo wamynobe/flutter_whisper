@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/home/mason/project/flutter_whisper/flutter_whisper/android/lib/src/main/jni/whisper/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/mason/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/mason/project/flutter_whisper/flutter_whisper/android/lib/.cxx/Debug/622ldd4o/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/mason/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/mason/project/flutter_whisper/flutter_whisper/android/lib/.cxx/Debug/622ldd4o/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "whisper::@6890427a1f51a3e7e1df": {
+      "artifactName": "whisper",
+      "abi": "x86",
+      "output": "/home/mason/project/flutter_whisper/flutter_whisper/android/lib/build/intermediates/cxx/Debug/622ldd4o/obj/x86/libwhisper.so",
+      "runtimeFiles": []
+    }
+  }
+}

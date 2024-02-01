@@ -1,0 +1,3 @@
+/home/mason/project/flutter_whisper/flutter_whisper/android/lib/.cxx/Debug/622ldd4o/x86/CMakeFiles/whisper.dir
+/home/mason/project/flutter_whisper/flutter_whisper/android/lib/.cxx/Debug/622ldd4o/x86/CMakeFiles/edit_cache.dir
+/home/mason/project/flutter_whisper/flutter_whisper/android/lib/.cxx/Debug/622ldd4o/x86/CMakeFiles/rebuild_cache.dir

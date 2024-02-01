@@ -16,3 +16,11 @@ Future<bool> initialize({
 }) async {
   return _platform.initialize(onResult: onResult, onError: onError);
 }
+
+/// start the whisper engine
+Future<void> startListening({
+  void Function(dynamic)? onResult,
+  void Function(dynamic)? onError,
+}) async {
+  return _platform.startListening();
+}

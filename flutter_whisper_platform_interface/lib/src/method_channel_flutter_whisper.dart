@@ -39,6 +39,8 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
   /// {@macro startListening}
   @override
   Future<void> startListening() async {
+    await _methodChannel.invokeMethod('start');
+    print('startListening');
     _eventChannel = const EventChannel('$_channelName/onStartListenning');
     _eventChannel.receiveBroadcastStream().listen(
       (event) {
@@ -50,7 +52,6 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
         onError?.call(error);
       },
     );
-    await _methodChannel.invokeMethod('start');
   }
 
   /// {@macro stopListening}

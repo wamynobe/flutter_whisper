@@ -1,0 +1,1 @@
+/home/mason/project/flutter_whisper/flutter_whisper/android/lib/src/main/jni/whisper/CMakeLists.txt
