@@ -6,7 +6,6 @@ import 'package:flutter_whisper_platform_interface/flutter_whisper_platform_inte
 
 /// An implementation of [FlutterWhisperPlatform] that uses method channels.
 class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
-  /// The method channel used to interact with the native platform.
   static const _channelName = 'flutter_whisper';
 
   static const _methodChannel = MethodChannel(_channelName);
@@ -19,7 +18,6 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
   /// callback invoked when cannot get data from the native side
   void Function(dynamic)? onError;
 
-  /// {@macro initialize}
   @override
   Future<bool> initialize({
     void Function(dynamic)? onResult,
@@ -37,11 +35,12 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
     return isInitialized as bool;
   }
 
-  /// {@macro startListening}
   @override
   Future<void> startListening() async {
     if (!_isReady) {
-      throw Exception('Whisper engine is not ready');
+      throw Exception(
+        '''Whisper engine is not ready. Please call initialize first.''',
+      );
     }
     log('''start listening on channel----------------------->: ${_eventChannel.name}''');
     _eventChannel.receiveBroadcastStream().listen(
@@ -55,7 +54,6 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
     await _methodChannel.invokeMethod('start');
   }
 
-  /// {@macro stopListening}
   @override
   Future<void> stopListening() async {
     _isReady = false;
