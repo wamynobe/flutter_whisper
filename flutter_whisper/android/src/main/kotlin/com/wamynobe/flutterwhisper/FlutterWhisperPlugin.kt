@@ -27,15 +27,15 @@ import kotlin.coroutines.*
 class FlutterWhisperPlugin : FlutterPlugin, MethodCallHandler {
     private lateinit var channel: MethodChannel
     private var context: Context? = null
-    private var whisper: com.whispercpp.whisper.WhisperContext?  = null
-    private lateinit var eventChannel: EventChannel
+    private var whisper: com.whispercpp.whisper.WhisperContext? = null
+    private var eventChannel: EventChannel? = null
     private val eventHandler = MyEventChannelHandler()
 
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_whisper")
         eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "flutter_whisper/onStartListenning")
-        eventChannel.setStreamHandler(eventHandler)
+        eventChannel?.setStreamHandler(eventHandler)
         Logger.getLogger("FlutterWhisperPlugin").info("start")
         channel.setMethodCallHandler(this)
         context = flutterPluginBinding.applicationContext
@@ -54,32 +54,24 @@ class FlutterWhisperPlugin : FlutterPlugin, MethodCallHandler {
         when(call.method) {
             "getPlatformName" -> result.success("Android_Tested")
             "initialize" -> {
-                runBlocking(Dispatchers.IO) {
-                    launch {
-                        loadBaseModel()
+                Thread {
+                    runBlocking(Dispatchers.IO) {
+                        launch {
+                            loadBaseModel()
+                        }
+                        result.success(true)
+
                     }
-                }
-
-
-                result.success(true)
+                }.start()
             }
             "start" -> {
-                newSingleThreadContext(
-                    "WhisperListeningThread"
 
-                ).use {
-                    ctx ->runBlocking(ctx) {
+                Thread {
+                    Logger.getLogger("FlutterWhisperPlugin").info("running on thread ${Thread.currentThread().name}")
+                    //start listen to user and get the result from whisper
 
-                    launch {
-                        for (i in 1..10) {
-                            Logger.getLogger("FlutterWhisperPlugin").info("send event $i")
-                            eventHandler.sendEvent(i)
-                            delay(1000)
-                        }
-                    }
-                }
-                }
-
+                    eventHandler.sendEvent(i)
+                }.start()
 
             }
             "stop" -> {
@@ -90,7 +82,6 @@ class FlutterWhisperPlugin : FlutterPlugin, MethodCallHandler {
                 runBlocking {
                     launch {
                         whisper!!.release()
-
                     }
                 }
             }
@@ -105,7 +96,6 @@ class FlutterWhisperPlugin : FlutterPlugin, MethodCallHandler {
     class MyEventChannelHandler : EventChannel.StreamHandler, CoroutineScope by MainScope(){
         fun sendEvent(eventData: Any) {
             Handler(Looper.getMainLooper()).post {
-                Logger.getLogger("FlutterWhisperPlugin").info("eventSink $eventSink")
                 Logger.getLogger("FlutterWhisperPlugin").info("send event $eventData")
                 eventSink?.success(eventData)
             }

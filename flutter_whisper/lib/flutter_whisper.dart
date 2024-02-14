@@ -18,9 +18,6 @@ Future<bool> initialize({
 }
 
 /// start the whisper engine
-Future<void> startListening({
-  void Function(dynamic)? onResult,
-  void Function(dynamic)? onError,
-}) async {
+Future<void> startListening() async {
   return _platform.startListening();
 }

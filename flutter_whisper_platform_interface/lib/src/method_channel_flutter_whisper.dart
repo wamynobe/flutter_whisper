@@ -27,6 +27,7 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
   }) async {
     this.onResult = onResult;
     this.onError = onError;
+    _eventChannel = const EventChannel('$_channelName/onStartListenning');
 
     if (_isReady) {
       return true;
@@ -39,24 +40,25 @@ class MethodChannelFlutterWhisper extends FlutterWhisperPlatform {
   /// {@macro startListening}
   @override
   Future<void> startListening() async {
-    await _methodChannel.invokeMethod('start');
-    print('startListening');
-    _eventChannel = const EventChannel('$_channelName/onStartListenning');
+    if (!_isReady) {
+      throw Exception('Whisper engine is not ready');
+    }
+    log('''start listening on channel----------------------->: ${_eventChannel.name}''');
     _eventChannel.receiveBroadcastStream().listen(
       (event) {
-        log('event -----------------------> : $event');
         onResult?.call(event);
       },
       onError: (Object error) {
-        log('stream error ----------------------->: $error');
         onError?.call(error);
       },
     );
+    await _methodChannel.invokeMethod('start');
   }
 
   /// {@macro stopListening}
   @override
   Future<void> stopListening() async {
+    _isReady = false;
     await _methodChannel.invokeMethod('stop');
   }
 
