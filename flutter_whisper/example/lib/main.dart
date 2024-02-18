@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_whisper/flutter_whisper.dart';
 
@@ -42,8 +44,13 @@ class _HomePageState extends State<HomePage> {
               onPressed: () async {
                 if (!context.mounted) return;
                 try {
-                  final result = await getPlatformName();
-                  setState(() => _platformName = result);
+                  log('init');
+                  await initialize(
+                    onResult: (p0) {
+                      if (!context.mounted) return;
+                      setState(() => _platformName = p0.toString());
+                    },
+                  );
                 } catch (error) {
                   if (!context.mounted) return;
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -54,7 +61,45 @@ class _HomePageState extends State<HomePage> {
                   );
                 }
               },
-              child: const Text('Get Platform Name'),
+              child: const Text('init'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () async {
+                if (!context.mounted) return;
+                try {
+                  log('startListening');
+                  await startListening();
+                } catch (error) {
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      content: Text('$error'),
+                    ),
+                  );
+                }
+              },
+              child: const Text('start'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () async {
+                if (!context.mounted) return;
+                try {
+                  log('stopListening');
+                  await stopListening();
+                } catch (error) {
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      content: Text('$error'),
+                    ),
+                  );
+                }
+              },
+              child: const Text('stop'),
             ),
           ],
         ),

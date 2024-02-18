@@ -21,3 +21,7 @@ Future<bool> initialize({
 Future<void> startListening() async {
   return _platform.startListening();
 }
+
+Future<void> stopListening() async {
+  return _platform.stopListening();
+}
