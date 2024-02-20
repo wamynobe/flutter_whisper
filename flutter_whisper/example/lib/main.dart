@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_whisper/flutter_whisper.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,6 +24,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String? _platformName;
+  late YoutubePlayerController _controller;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = YoutubePlayerController(
+      initialVideoId: 'UBXD0mhxpXQ',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +42,10 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            YoutubePlayer(
+              controller: _controller,
+              showVideoProgressIndicator: true,
+            ),
             if (_platformName == null)
               const SizedBox.shrink()
             else
@@ -69,6 +83,9 @@ class _HomePageState extends State<HomePage> {
                 if (!context.mounted) return;
                 try {
                   log('startListening');
+                  _controller
+                    ..mute()
+                    ..play();
                   await startListening();
                 } catch (error) {
                   if (!context.mounted) return;
@@ -80,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 }
               },
-              child: const Text('start'),
+              child: const Text('startP'),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -88,6 +105,7 @@ class _HomePageState extends State<HomePage> {
                 if (!context.mounted) return;
                 try {
                   log('stopListening');
+                  _controller.unMute();
                   await stopListening();
                 } catch (error) {
                   if (!context.mounted) return;
